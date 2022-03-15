@@ -1,0 +1,43 @@
+<script type="text/javascript">
+    for(var i = 1; i <= 10; i++)
+    {
+        if(i % 3 == 0)
+            continue;
+        document.write(i + "<br>");
+    }
+
+    var i = 1;
+    while(i<=10){
+        if(i % 3 == 0){
+            i++
+            continue;
+        }
+        document.write(i + "<br>");
+        i++;
+    }
+
+    i = 3;
+    do{
+        if(i % 3 ==0)
+        {
+            i++;
+            continue;
+        }
+        document.write(i + "<br>");
+        i++
+    }while(i<=10);
+    
+    var i, j;
+
+    loop1:
+    for (i = 0; i < 3; i++) {      //첫번째 for문은 "loop1" 레이블을 붙였다.
+        loop2:
+        for (j = 0; j < 3; j++) {   //두번째 for문은 "loop2" 레이블을 붙였다.
+            if (i === 1 && j === 1) {
+                continue loop1;
+            }
+        document.write('i = ' + i + ', j = ' + j + "<br>");
+   }
+}
+
+</script>

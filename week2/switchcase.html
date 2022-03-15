@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch case</title>
+    <script type="text/javascript">
+        var score = prompt("jQuery 점수를 입력 하세요", 80);  //prompt는 문자열로 입력받음
+
+        switch(parseInt(score/10)){
+            case 10:
+            case 9:
+                document.write("당신의 등급은 A 입니다.");
+                break;
+            case 8:
+                document.write("당신의 등급은 B 입니다.");
+                break;
+            case 7:
+                document.write("당신의 등급은 C 입니다.");
+                break;
+            case 6:
+                document.write("당신의 등급은 D 입니다.");
+                break;  
+            default:
+                document.write("휴학을 권합니다.");   
+        }
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
