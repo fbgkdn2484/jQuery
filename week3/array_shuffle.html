@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title> 배열객체 </title>
+<script>
+
+    function shuffle(array) { array.sort(() => Math.random() - 0.5); }
+
+
+    var number = [];
+    for(i=0;i<45;i++)
+        number[i] = i+1;
+    
+    document.write("1부터 45까지 number배열에 할당 후 출력 <br>")   
+    for(i=0;i<45;i++)
+        document.write(number[i] + " ");
+
+    shuffle(number);
+    document.write("<br>1부터 45까지 number배열 shuffle 후 출력 <br>")
+
+    for(i=0; i<number.length; i++)
+        document.write(number[i] + " ");
+    document.write("<br>1부터 45까지 number배열 shuffle 후 출력 <br>")
+
+    for(i in number)
+        document.write(number[i] + " ");
+
+    var lotto=[];
+    for(i=0; i<6; i++)
+        lotto[i] = number[i];
+    document.write("<br><br>6개의 숫자를 출력<br>")
+    for(i=0; i<6; i++)
+        document.write(lotto[i] + " ")
+
+    lotto.sort(function(a, b)  {
+    if(a > b) return 1;
+    if(a === b) return 0;
+    if(a < b) return -1;
+    });
+
+    document.write("<br><br>6개의 숫자를 정렬하여 출력<br>")
+    for(i=0; i<6; i++)
+        document.write(lotto[i] + " ")
+    
+</script>
+</head>
+<body>
+</body>
+</html>
