@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수</title>
+    <script>
+        // function sum(){
+        //     document.write("parameters & arguments <br>");
+        //     var sum = arguments[0] + arguments[1] + arguments[2];
+        //     // var sum = a + b + c; 
+        //     document.write("sum = " + sum);
+        // }
+        // sum(10,20,30);
+
+        var a = 5;
+        function outerFunction(){
+            var b = 10;
+            function innerFunction(){
+                var c = 20;
+                document.write("<br> a= " + a);
+                document.write(" a0= " + a + ", b= " + b + ", c= " + c);
+            }
+            innerFunction();
+            document.write("<br> a= " + a);
+            document.write(" a1= " + a + ", b= " + b);
+        }
+        outerFunction();
+        document.write("<br> a= " + a);
+        document.write(" a2= " + a );
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function Score(name, kor, eng) 
+        {
+
+            this.UserName = name;
+            this.UserKor = kor;
+            this.UserEng = eng;
+
+            this.getScore = function()
+            {
+                document.write("이름 : " + this.UserName + "<br>");
+                document.write("국어 : " + this.UserKor + "<br>");
+                document.write("영어 : " + this.UserEng + "<br>");
+            }
+
+            this.getAvg = function() 
+            {
+                return (this.UserKor + this.UserEng)/2;               
+            }
+
+        }
+
+        var kimgun = new Score("김씨", 99, 65);
+        var son = new Score("손씨", 100, 100);
+
+        kimgun.getScore();
+        document.write("평균 : " + kimgun.getAvg() + "<br><br>");
+        son.getScore();
+        document.write("평균 : " + son.getAvg() + "<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
