@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 탐색 선택자 </title>
+<script src="js/jquery.js"></script>
+<script>
+	$(function(){
+		$("#menu li:first")			// (아이디 선택자)menu의 모든 li 자손 중 첫번째 
+		.css({"background-color":"#ff0"});
+
+		$("#menu li:last")			// (아이디 선택자)menu의 모든 li 자손 중 마지막 
+		.css({"background-color":"#0ff"});
+	});
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<ul id="menu">
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+		<li>내용4</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+<script src="js/jquery.js"></script>
+<script>
+	$(function(){
+		$("#wrap  h1")			//자손 선택자 : 빈칸은 자손을 나타내며 모든 자손 중 어떤 태그라는 말. 여기서는 #wrap의 자손중 모든 h1을 지정함
+		.css({
+			"background-color":"yellow",
+			"border":"2px dashed #f00"
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<h1>인접 관계 선택자</h1>
+		<p>내용1</p>
+		<section>
+			<h1>하위 요소 선택자</h1>
+			<p>내용2</p>
+		</section>
+	</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 탐색 선택자 </title>  
+<script src="js/jquery.js"></script>
+<script>
+	$(function(){
+		$("#menu li").eq(2)						//eq(2) : equal 같다는 뜻 즉, 여기서는 배열(인덱스) 순으로 2번째 라는 뜻 (가장 첫번째가 0부터 시작)
+		.css({"background-color":"#ff0"});
+
+		$("#menu li:lt(2)")						//lt(2) Less than : 보다 작은, 지정된 숫자 즉 2보다 작은 요소들을 반환
+		.css({"background-color":"#0ff"});
+
+		$("#menu li:gt(2)")						//lt(2) Greater than : 보다 큰, 지정된 숫자 즉 2보다 큰 요소들을 반환
+		.css({"background-color":"#f0f"});
+	});
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<ul id="menu">
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+		<li>내용4</li>
+		<li>내용5</li>
+	</ul>
+</body>
+</html>
