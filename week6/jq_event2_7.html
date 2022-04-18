@@ -6,7 +6,7 @@
 <script src="js/jquery.js"></script>
 <script>
 $(function(){
-	$(".btn_wrap").delegate(".btn_1.on", 
+	$(".btn_wrap").delegate(".btn_1.on", 	//delegate 이벤트 등록 메서드는 선택한 요소의 하위 요소에 이벤트를 등록하며 동적으로 생성돈 요소와 복제된 요소에도 이벤트를 등록함
 	"mouseover focus", function() {
 		alert("HELLO!");
 	});
