@@ -12,11 +12,11 @@ $(function( ) {
 	});
 
 	$(".btn2").on({
-		"mouseover focus": function() {
+		"mouseover focus": function() {			//선택한 요소의 영역에 마우스를 올리면 이벤트 발생
 			$(".btn2").parent().next()
 			.css({"color":"#0f0"});
 		},
-		"mouseout blur": function() {
+		"mouseout blur": function() {			//포커스가 선택한 요소에서 다른 요소로 이동되었을 때 이벤트 발생
 			$(".btn2").parent().next()
 			.css({"color":"#000"});
 		},
