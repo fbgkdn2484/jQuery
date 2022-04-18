@@ -6,12 +6,12 @@
 <script src="js/jquery.js"></script>
 <script>
 $(function( ) {
-	$(document).ready(function(){
+	$(document).ready(function(){				//지정한 html 문서 객체의 로딩이 완료된 후 이벤트가 발생합니다.
 		var h1 = $(".img1").height();
 		console.log("ready :", h1);
 	});
 
-	$(window).load(function(){
+	$(window).load(function(){				//선택한 이미지 또는 프레임 요소에 연동된 소스의 로딩이 완료된 후 이벤트가 발생합니다.
 		var h2 = $(".img1").height();
 		console.log("load :", h2);
 	});   
