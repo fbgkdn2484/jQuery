@@ -6,7 +6,7 @@
 <script src="js/jquery.js"></script>
 <script>
 $(function(){
-	$("#rel_site").on("change", function(){
+	$("#rel_site").on("change", function(){			//change() 메소드는 해당하는 요소의 value에 변화가 생길 경우 이를 감지하여 등록된 콜백함수를 동작시킨다. 
 		$(".txt").text($(this).val());
 	});
 });
