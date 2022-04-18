@@ -22,7 +22,7 @@ $(function(){
 		$(".menuWrap_2 a")
 		.css({"background-color":"#fff"});
 
-		var idx = $(".menuWrap_2 a").index(this);
+		var idx = $(".menuWrap_2 a").index(this);	//this의 인덱스를 반환 .index() 메서드에 인수가 전달되지 않으면 반환 값은 형제 요소를 기준으로 jQuery 객체 내 첫 번째 요소의 위치를 나타내는 정수
 		$(".menuWrap_2 a").eq(idx)
 		.css({"background-color":"#0ff"});
 		
