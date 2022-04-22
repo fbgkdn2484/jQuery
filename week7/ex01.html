@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow")
+  });
+
+  $("#flip").click(function(){
+      
+      var random = 0 < Math.floor(Math.random()*10) <= 3 
+
+          if (random == 1)
+          {
+              $("#img_form_url").attr("src", "../images/ex1.jpg");
+          }
+          else if (random == 2)
+          {
+              $("#img_form_url").attr("src", "../images/ex2.jpg");
+          }
+          else
+          {
+              $("#img_form_url").attr("src", "../images/ex.jpg");
+          }
+          
+      });
+});
+
+
+
+
+</script>
+<style> 
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+  
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+</style>
+</head>
+<body>
+
+    <div id="flip">Click to slide the panel down or up</div>
+    <div id="panel"><img id="img_form_url" src="../images/ex.jpg"></div>
+    <button id="btn">이미지 바꾸기</button>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script> 
+    $(document).ready(function(){
+        let imgarr = ["../images/ex.jpg", "../images/ex1.jpg", "../images/ex2.jpg"];
+        let cnt = 0;
+        setInterval(function(){
+            // console.log(cnt)
+            cnt = (cnt > 2) ? 0 : cnt
+            $("#images").attr("src", imgarr[cnt]).fadeIn(1000).fadeOut(1000);
+            cnt++;
+        }, 3000);
+    });
+</script>
+</head>
+<body>
+    <img id="images" src="../images/ex.jpg">
+</body>
+</html>
