@@ -1,0 +1,319 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>			<!-- 반응형 -->
+	<title>jQuery Mobile</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery-sakura.css">    <!--  벚꽃 -->
+	
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>				<!-- 순서중요 -->
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>  <!--  벚꽃 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">		<!-- 슬라이더  -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">		<!-- tooltip -->
+	<link href="css/jquery-ui.css" rel="stylesheet">											<!-- tooltip -->
+	<style>
+		.draggable { width: 150px; height: 150px; padding: 0.5em; }
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>								<!-- tooltip -->
+  	<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>						<!-- tooltip -->
+
+	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>			<!-- 슬라이더  -->
+	<script src="js/jquery-sakura.js"></script>			 <!--  벚꽃 -->
+	<script type="text/javascript" src="js/jquery.zoom.js" ></script>	<!--  이미지 줌   -->
+	
+	
+
+	
+	<style>
+		li { list-style:none; }
+		.picture { list-style:none; padding:0; margin:0; }
+		.picture li { float:left; width:50%;}
+		.picture li a {display:block; margin:5px; border: 1px }
+		.picture li img { display:block; width:50%;  height:auto;}
+		.picture li img:hover { display:block; width:100%;  height:auto;} 
+
+		.ui-tooltip, .arrow:after {
+		background: black;
+		border: 2px solid white;
+		}
+		.ui-tooltip {
+		padding: 10px 20px;
+		color: white;
+		border-radius: 20px;
+		font: bold 14px "Helvetica Neue", Sans-Serif;
+		text-transform: uppercase;
+		box-shadow: 0 0 7px black;
+		}
+		.arrow {
+		width: 70px;
+		height: 16px;
+		overflow: hidden;
+		position: absolute;
+		left: 50%;
+		margin-left: -35px;
+		bottom: -16px;
+		}
+		.arrow.top {
+		top: -16px;
+		bottom: auto;
+		}
+		.arrow.left {
+		left: 20%;
+		}
+		.arrow:after {
+		content: "";
+		position: absolute;
+		left: 20px;
+		top: -20px;
+		width: 25px;
+		height: 25px;
+		box-shadow: 6px 5px 9px -9px black;
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+		}
+		.arrow.top:after {
+		bottom: -20px;
+		top: auto;
+		}
+	</style>
+
+	<script>
+
+		$(document).ready(function () {
+			
+			$("#zoom").zoom();
+			$('.slider').bxSlider({ // 클래스명 주의!
+
+				auto: true, // 자동으로 애니메이션 시작
+
+				speed: 500,  // 애니메이션 속도
+
+				pause: 5000,  // 애니메이션 유지 시간 (1000은 1초)
+
+				mode: 'horizontal', // 슬라이드 모드 ('fade', 'horizontal', 'vertical' 이 있음)
+
+				autoControls: true, // 시작 및 중지버튼 보여짐
+
+				pager: true, // 페이지 표시 보여짐
+
+				captions: true, // 이미지 위에 텍스트를 넣을 수 있음
+
+			});
+
+		});
+
+  	</script>
+
+	<script>
+	$( function() {
+	  $( document ).tooltip({
+		position: {
+		  my: "center bottom-20",
+		  at: "center top",
+		  using: function( position, feedback ) {
+			$( this ).css( position );
+			$( "<div>" )
+			  .addClass( "arrow" )
+			  .addClass( feedback.vertical )
+			  .addClass( feedback.horizontal )
+			  .appendTo( this );
+		  }
+		}
+	  });
+	} );
+	</script>
+
+
+
+	<script>  
+		$(window).on('load', function () {
+			$('body').sakura();
+		});
+	</script>  <!--  벚꽃 -->
+
+	<script>
+		$( function() {
+			$( "#tabs" ).tabs({
+				event: "mouseover"
+			});
+		} );
+	</script>
+
+	<script>
+		$( function() {
+			$( ".draggable" ).draggable({ revert: true });
+		} );
+	</script>
+	
+</head>
+
+<body>
+	
+<div data-theme="b">
+	<div data-role="page" id="home">
+		<div data-role="header" data-theme="b">
+			<h1>유하우 포트폴리오</h1>
+		</div>
+		<div data-role="content" style="text-align:center">
+			<div id="zoom" style="text-align:center;">
+				<br><br><br>
+				<img src="home.jpg" width="200">
+			
+				<br><br><br>
+			</div>
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#intro">자기소개</a></li>
+				<li><a href="#movie" data-rel="dialog">포트폴리오</a></li>
+				<li><a href="#wizard3-1" data-rel="dialog">교가</a></li>
+				<li><a href="#gallery">자료사진</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>프로그래머 RHW</h1>
+		</div>
+	</div>
+	
+	<div data-role="page" id="intro" data-theme="b">
+		<div data-role="header" data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>			
+			<h1>자기 소개</h1>
+		</div>
+		<div data-role="content">
+				<div style="text-align:center">
+					<img src="me.gif" width="300" class="tooltip" title="항상 준비된 자에게만 기회가 온다!!">
+				</div>			
+			<div data-role="collapsible-set" data-theme="b" data-content-theme="e">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>성격의 장점 및 단점</h3>
+					<p>저의 신념은 '못해도 중간은 간다'라는 말입니다. 이 말처럼 저는 제가 뒤떨어 짐으로 인해서, 다른사람 혹은, 팀이나 조직에게 피해를 끼치는 것을 굉장히 싫어하는 성미를 가지고 있습니다. 때문에 무슨 방면에서 어떠한 일을 맞딱드리더라도, 제가 스스로 생각했을 때, 중간, 즉 평균보다 자신이 못한다고 생각이 들면 항상 중간이상은 되려고 열심히 노력하고자 하는 의지를 가지고 있습니다. 또한  제 성격의 장점으로는 둥글둥글 모나지 않은 성격, 그리고 배려심과 이타심이 깊다는 점을 들 수 있으며, 때문에 주변인들로부터 항상 어딜 가든, 어떤 상황에서도 잘 적응한다는 평을 받아왔습니다. 
+						이러한 제 성격의 단점은 너무 상대를 배려하여 상대방에게 싫은 소리를 잘 하지 못하고 적극적인 자기표현과 주장을 하지 못한다는 것입니다. 하지만 이러한 저의 단점은 사회 경험 즉, 여러가지 경험을 쌓고, 현실과 적극적으로 부딫쳐 나가면서 점차 극복해 나갈 수 있을 것이라고 생각합니다.
+					</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>입사 지원 동기</h3>
+					<p>과거와는 달리 게임산업이 점차 커져감에 따라 각종 게임에 대한 정보들을 전달하고 있는 오피지지의 역할 중심은 점차 커져갈 것이라고 생각합니다. 또한 오피지지가 이러한 시장의 흐름에 맞추어 발빠르게 오버워치, 배틀 그라운드 등 다른 게임으로도 시장을 빠르게 넓혀가는 모습에서 미래에 대한 비전을 보았고 이러한 점을 보고 지원하게 되었습니다.</p>
+				</div>
+				<div data-role="collapsible" >
+					<h3>장래 희망 및 포부</h3>
+					<p>op.gg에 저의 열정을 집중하겠습니다.
+						우선 처음에는 배움과 ,수용 그리고 도전의 자세로 저에게 주어진 임무를 위해 열심히 뛰어다니고, 질문을 두려워하지 않는 신입사원이 되겠습니다. 또한 자신의 부족한 점을 똑바로 직시하여 끊임없는 배움을 통해 기본을 다지고, 개발자로써의 발전 가능성을 높여나갈 것이며, 이후에는 단순한 개발자1에만 머무르지 않고 여러 게임 업체들과 적극적으로 파트너쉽을 맺어 여러가지 큰 이벤트를 제손으로 직접 진행해보고 싶습니다.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>프로그래머 RHW</h1>
+		</div>		
+	</div>
+	
+	<div data-role="page" id="movie" data-theme="b" class="draggable">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>포트폴리오 영상</h1>
+		</div>
+		<div data-role="content" id="tabs">
+			<ul>
+				<li><a href="#tabs-1">포트폴리오 소개 동영상</a></li>
+				<li><a href="#tabs-2">학교 소개 영상</a></li>
+			</ul>
+			
+			<div class="ui-bar ui-bar-a" id="tabs-1">포트폴리오 소개 동영상
+				<li><iframe width="100%" height="240" src="introduce.mp4"></iframe></li><br/>
+			</div><br/>
+			
+			<div class="ui-bar ui-bar-a" id="tabs-2">학교 소개 영상
+				<li><video controls width="100%" preload="metadata">
+					<source src="busan.mp4" type="video/mp4"></video>
+				</li>
+			</div><br/>
+			
+		</div>
+		<div data-role="footer" data-theme="b">
+		</div>
+	</div>
+
+	<div data-role="page" id="wizard3-1">
+		<div data-role="header">
+			<h1>학교 교가</h1>
+		</div>
+		<div data-role="content">
+			<div class="ui-bar ui-bar-e">부산 경상대학교 교가</div><br/>
+			<audio controls width="100%" preload="metadata">
+				<source src="schoolsong.mp4" type="audio/mp3">
+			</audio>	
+			<img src="school_logo.png" alt="" width="100%">
+		</div>
+		<div data-role="footer">
+			<a href="#home"  data-direction="reverse">이전</a>
+			<a href="#wizard3-2" data-rel="dialog" data-transition="slide">다음</a>
+		</div>
+	</div>
+
+	<div data-role="page" id="wizard3-2">
+		<div data-role="header">
+			<h1>포트폴리오 예제</h1>
+		</div>
+		<div data-role="content">
+			<div class="ui-bar ui-bar-e">jquery 예제</div><br/>
+			<audio controls width="100%" preload="metadata">
+				<source src="test.mp3" type="audio/mp3">
+			</audio>			
+			<img src="jquery_ex.png" alt="" width="100%">
+		</div>
+		<div data-role="footer">
+			<a href="#wizard3-1"  data-direction="reverse">이전</a>
+			<a href="#home">처음</a>
+		</div>
+	</div>
+
+	<div data-role="page" id="gallery"  data-theme="b">
+		<div data-role="header" data-position="fixed"  data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>자료 사진</h1>
+		</div>
+		<div data-role="content">
+			<ul class="slider">
+
+				<li><a href="1-1.png"><img src="1-1.png" alt="" title="design" width="100%"></a></li>		
+				<li><a href="1-2.png"><img src="1-2.png" alt="" title="design" width="100%"></a></li>		
+				<li><a href="1-3.png"><img src="1-3.png" alt="" title="design" width="100%"></a></li>
+				<li><a href="1-4.png"><img src="1-4.png" alt="" title="design" width="100%"></a></li>
+
+				<li><a href="2-1.PNG"><img src="2-1.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-2.PNG"><img src="2-2.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-3.PNG"><img src="2-3.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-4.PNG"><img src="2-4.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-5.PNG"><img src="2-5.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-6.PNG"><img src="2-6.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-7.PNG"><img src="2-7.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-8.PNG"><img src="2-8.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-9.PNG"><img src="2-9.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-10.PNG"><img src="2-10.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-11.PNG"><img src="2-11.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-12.PNG"><img src="2-12.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-13.PNG"><img src="2-13.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-14.PNG"><img src="2-14.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-15.PNG"><img src="2-15.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-16.PNG"><img src="2-16.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-17.PNG"><img src="2-17.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-18.PNG"><img src="2-18.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-19.PNG"><img src="2-19.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-20.PNG"><img src="2-20.PNG" alt="" title="check" width="100%"></a></li>
+				<li><a href="2-21.PNG"><img src="2-21.PNG" alt="" title="check" width="100%"></a></li>
+
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>프로그래머 RHW</h1>
+		</div>		
+	</div>
+</div>	
+
+
+</body>
+</html>
