@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> <!-- 성공했을 때 친 단어를 띄우거나 경고문을 띄우는 스타일 시트   -->
+    <link rel="stylesheet" type="text/css" href="css/jquery-sakura.css">    <!--  벚꽃 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" integrity="sha512-VZ6m0F78+yo3sbu48gElK4irv2dzPoep8oo9LEjxviigcnnnNvnTOJRSrIhuFk68FMLOpiNz+T77nNY89rnWDg==" crossorigin="anonymous"></script>  <!-- 단어 API 불러오기 -->
+</head>
+
+<body>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>  <!--  벚꽃 -->
+	<script>  
+	$(window).load(function () {
+    $('body').sakura();
+	});
+	</script>  <!--  벚꽃 -->
+
+	<audio id="testMusic">
+	  	<source src="test.mp3" type="audio/mpeg">
+	</audio>
+
+	<audio id="testMusic1">
+	  	<source src="test1.mp3" type="audio/mpeg">
+	</audio>
+
+	<audio id="testMusic2">
+	  	<source src="test2.mp3" type="audio/mpeg">
+	</audio>
+
+    <div class="header">
+        <h1>타이핑 마스터!</h1>
+    </div>
+	</script>
+    <div class="word-display">
+        Hello
+    </div>
+    <div class="word-input-box">
+        <input type="text" class="word-input" />
+    </div>
+    <div class="game-info">
+        <div>
+            남은시간 :
+            <span class="time">0</span> 초
+        </div>
+        <div> 획득점수 :
+            <span class="score">0</span> 점
+        </div>
+        <div> 난이도 :
+            <span class="nanyido">10</span> 등급
+        </div>
+    </div>
+	    <button class="button loading"  onclick="run()">
+	        게임을 불러오는중...
+	    </button>
+	    <div>
+		    <input type="button" class="button1" name="nan" value="난이도 상승" onclick="nan1()">
+		    <input type="button" class="button1" name="nan1" value="난이도 하락" onclick="nan2()">
+		</div>
+    <div class="toast-wrap">
+
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/jquery-sakura.js"></script>
+
+</body>
+
+</html> 

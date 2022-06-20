@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Aloha - 회원가입</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link href="jquery-ui.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+    
+    <script type="text/javascript">
+
+        $(function(){
+        
+            $("#sa_birth").datepicker({
+                dateFormat : 'yy-mm-dd', // 텍스트 필드에 입력되는 날짜 형식을 지정한다.
+                showAnim : 'bounce',     //지정한 애니메이션을 적용한다.
+                changeMonth: true,       // 월을 바꿀수 있는 셀렉트 박스를 표시한다.
+                changeYear: true,        // 년을 바꿀 수 있는 셀렉트 박스를 표시한다.
+                numberOfMonths : [1,3],  // 한번에 얼마나 많은 월을 표시할것인가. [1,3] 일 경우, 1(행) x 3(열) = 3개의 월 표시.
+                showButtonPanel : true,  // 캘린더 하단에 버튼 패널을 표시한다.
+                currentText : '오늘날짜', // 오늘 날짜로 이동하는 버튼 패널을 표시한다.
+                closeText : '닫기',      // 닫기 버튼 패널.
+                nextText : '다음 달',    // next 아이콘의 툴팁.
+                prevText : '이전 달',    // prev 아이콘의 툴팁.
+                minDate : '-1Y',        //달력에 최소값을 정해서 최소값 이전 날짜는 disable처리한다.
+                maxDate : '+3M'         //달력에 최대값을 정해서 최대값 이후 날짜는 disable처리한다.
+            });
+        
+        });
+    </script>
+
+    <style>
+        select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: url('arrow.jpg') no-repeat 95% 50%;
+        }
+        
+        select::-ms-expand {
+            display: none;
+        }
+    
+    </style>
+    
+
+</head>
+
+<body class="bg-gradient-primary">
+    <div class="container">
+        <br>
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">회원 정보를 입력해 주세요!</h1>
+                            </div>
+                            <br>
+                            <form class="user">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="name"
+                                            placeholder="이름">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-user" id="sa_num"
+                                            placeholder="사원번호"  maxlength='5'>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <select class="form-control form-control-combo" id="sa_def" placeholder="부서">
+                                            <option value="none" selected>부서</option>
+                                            <option value="인사">인사</option>
+                                            <option value="디자인">디자인</option>
+                                            <option value="개발">개발</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <select class="form-control form-control-combo" id="sa_rnk" placeholder="직급">
+                                            <option value="none" selected>직급</option>
+                                            <option value="사원">사원</option>
+                                            <option value="팀장">팀장</option>
+                                            <option value="이사">이사</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <select class="form-control form-control-combo" id="sa_sex" placeholder="성별">
+                                            <option value="none" selected>성별</option>
+                                            <option value="남">남</option>
+                                            <option value="여">여</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <select class="form-control form-control-combo" id="sa_wor" placeholder="재직여부">
+                                            <option value="none" selected>재직여부</option>
+                                            <option value="Y">Y</option>
+                                            <option value="N">N</option>
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" id="sa_ema"
+                                        placeholder="이메일">
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user"
+                                            id="sa_phn" placeholder="연락처"  maxlength='3'>
+                                    </div>
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user"
+                                            id="sa_phn" placeholder="' - ' 없이 입력"  maxlength='4'>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control form-control-user"
+                                            id="sa_phn" placeholder="' - ' 없이 입력"  maxlength='4'>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="sa_birth"
+                                        placeholder="생년월일">
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <select class="form-control form-control-combo" id="sa_mar" placeholder="결혼여부">
+                                            <option value="none" selected>결혼여부</option>
+                                            <option value="Y">Y</option>
+                                            <option value="N">N</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="sa_addr"
+                                            placeholder="우편번호">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" id="sa_addr1"
+                                        placeholder="주소">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" id="sa_addr2"
+                                        placeholder="상세주소">
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="sa_bnk"
+                                            placeholder="은행명">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-user" id="sa_bnk1"
+                                            placeholder="예금주">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" id="sa_bnk2"
+                                        placeholder="계좌번호">
+                                </div>
+
+                                <br>
+                                <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                    <b>다음</b>
+                                </a>
+                                <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
+                                    <i class="fab fa-google fa-fw"></i> Register with Google
+                                </a>
+                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                                </a> -->
+                            </form>
+                            <!-- <hr>
+                            <div class="text-center">
+                                <a class="small" href="forgot-password.html">Forgot Password?</a>
+                            </div>
+                            <div class="text-center">
+                                <a class="small" href="login.html">Already have an account? Login!</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>
