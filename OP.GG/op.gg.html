@@ -1,0 +1,205 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>			<!-- 반응형 -->
+	<title>OP.GG</title>
+	
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>				<!-- 순서중요 -->
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	
+<style>
+   li { list-style:none; }
+  .picture { list-style:none; padding:0; margin:0; }
+  .picture li { float:left; width:50%;}
+  .picture li a {display:block; margin:5px; border: 1px }
+  .picture li img { display:block; width:50%;  height:auto;}
+  .picture li img:hover { display:block; width:100%;  height:auto;} 
+</style>
+
+<script>
+
+	$(document).ready(function () {
+
+		$('.slider').bxSlider({ // 클래스명 주의!
+			
+			auto: true, // 자동으로 애니메이션 시작
+
+			speed: 500,  // 애니메이션 속도
+
+			pause: 5000,  // 애니메이션 유지 시간 (1000은 1초)
+
+			mode: 'horizontal', // 슬라이드 모드 ('fade', 'horizontal', 'vertical' 이 있음)
+
+			autoControls: true, // 시작 및 중지버튼 보여짐
+
+			pager: true, // 페이지 표시 보여짐
+
+			captions: true, // 이미지 위에 텍스트를 넣을 수 있음
+
+		});
+
+	});
+
+  </script>
+</head>
+
+<body>
+<div data-theme="b">
+	<div data-role="page" id="home">
+		<div data-role="header" data-theme="b">
+			<h1>OP.GG 소개</h1>
+		</div>
+		<div data-role="content" style="text-align:center">
+				<img src="home.png" width="200">
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#intro">회사소개</a></li>
+				<li><a href="#movie" data-rel="dialog">소개영상</a></li>
+				<li><a href="#wizard3-1" data-rel="dialog">opening</a></li>
+				<li><a href="#gallery">자료사진</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>전적 검색 사이트</h1>
+		</div>
+	</div>
+	
+	<div data-role="page" id="intro" data-theme="b">
+		<div data-role="header" data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>			
+			<h1>회사 소개</h1>
+		</div>
+		<div data-role="content">
+				<div  style="text-align:center">
+					<img src="design.jpg" width="300">
+				</div>			
+			<div data-role="collapsible-set" data-theme="b" data-content-theme="e">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>기업소개</h3>
+					<p>오피지지는 글로벌 게이밍과 이스포츠 산업에서 1티어 기업을 꿈꾸는 스타트업입니다. 우리는 게임 데이터를 분석하는 서비스를 만들며, 게임을 더 재밌게 경험하는데 필요한 다양한 인사이트를 전 세계 게이머들에게 제공합니다. 
+						또한, 오피지지는 전세계 유저들에게 전에 없던 최고의 게임 플레이 경험을 제공하고 게이머의 일상을 점령할 수 있는 서비스를 만들어가고 있는 글로벌 게임 데이터 플랫폼입니다.
+						오피지지는 서로 얼굴도 본 적 없이 온라인 커뮤니티에서 만난 20대 초반의 게이머들이
+						더 재미있는 게임 플레이를 위해 만든 서비스가 2013년 오피지지의 시작이었으며,
+						오피지지에 모인 구성원 모두 온라인에서의 소중한 인간 관계와 우정, 어쩌면 사랑까지 경험한 사람들입니다.
+						이러한 경험을 통해 우리는, 온라인 취미 생활의 열정과 즐거움 및 이스포츠에서의 스포츠 열기와 환희와 같은 온라인에서 얻을 수 있는 다양한 인간적 가치들도 오프라인에서 얻어지는 것 만큼의 진정성을 가지고 있다고 믿습니다.
+						우리는 우리의 이러한 믿음을 세상에 증명할 수 있는 온라인 서비스를 만들어나가고자 합니다.  ..생략</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>기업문화</h3>
+					<h3>1. 타인이 정하지 않고 스스로 결정하며, 나의 일에 책임을 다합니다.</h3>
+					<p>
+						어떤 조직에선 빠른 의사결정과 리스크의 최소화를 위해 Top-Down 방식으로 일합니다.
+						또다른 조직에선 자기의 역할 수준 내에서 최고의 성과를 만드는 것을 추구할 수도 있습니다.
+						그러나 오피지지에서는 “어떤 성과를 낼 것인지 직무 담당자가 직접 결정”할 수 있습니다.
+						오피지지 조직에서는 모두가 각각의 업무 리더가 되어 일합니다.
+						구성원 모두가 각자의 전문성을 발휘하여 회사와 동료의 신뢰를 얻고, 
+						이를 바탕으로 스스로 권한과 책임을 확장해 나갑니다.
+						이 과정을 통해 오피지지는
+						우리의 아이디어를 현실로 만들 성과 책임을 가지고, 게임생태계의 혁신을 이끕니다.
+					</p>
+					<h3>2. 척하지 않고 솔직하게 대화하며, 나와 다름을 인정하고 왜곡 없이 소통합니다.</h3>
+					<p>
+						어떤 조직은 친밀한 조직문화를 위해 절충안을 선택할 수도 있습니다.
+						또 다른 조직은 모든 사람들의 빠른 합의를 위해 투표나 다수결 방식을 선택할 수도 있습니다.
+						그러나 우리는 불편하고 어렵더라도 창조적 갈등을 추구합니다.
+						우리의 목표는 빠르게 한 목소리를 만드는 것이 아닙니다.
+						우리의 치열한 토론이 최고의 선택을 만들어낸다는 믿음 아래
+						“근거에 기반한” 건전한 피드백을 주고 받을 수 있도록 협업하며 소통합니다.
+					</p>
+					
+				</div>
+				<div data-role="collapsible" >
+					<h3>인재상</h3>
+					<p>우리는 변화를 두려워하기보다 패러다임을 바꾸고, 어려운 목표는 포기하지 않고 즐기며 달성할 수 있는 '사내기업가정신'을 지닌 인재와 함께하고자 합니다. 
+						이러한 인재는 타인이 정하지 않고 스스로 결정하며, 나의 일에 책임을 다할 줄 아는 '자기결정의 자율' 하에 일하며
+						척하지 않고 솔직하게 대화하며, 나와 다름을 인정하고 왜곡 없이 소통할 수 있는 '근거 있는 솔직함'을 통해 동료들과 협업하고 소통합니다. ..생략</p>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>전적 검색 사이트</h1>
+		</div>		
+	</div>
+	
+	<div data-role="page" id="movie" data-theme="b">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>오피지지 영상</h1>
+		</div>
+		<div data-role="content" >
+			<div class="ui-bar ui-bar-a">OP.GG 소개 동영상</div><br/>
+			<li><iframe width="100%" height="240" src="introduce.mp4"></iframe></li><br/>
+			<div class="ui-bar ui-bar-a">OP.GG 데스크탑 앱 가이드</div><br/>
+			<li><video controls width="100%" preload="metadata">
+				<source src="OP.GG_Guide.mp4" type="video/mp4">
+			</video></li>
+		</div>
+		<div data-role="footer" data-theme="b">
+		</div>
+	</div>
+	
+	<div data-role="page" id="wizard3-1">
+		<div data-role="header">
+			<h1>LOL OP</h1>
+		</div>
+		<div data-role="content">
+			<div class="ui-bar ui-bar-e">opening-rise</div><br/>
+			<audio controls width="100%" preload="metadata">
+				<source src="Rise.mp3" type="audio/mp3">
+			</audio>	
+			<img src="Rise_img.jpg" alt="" width="100%">
+		</div>
+		<div data-role="footer">
+			<a href="#home"  data-direction="reverse">이전</a>
+			<a href="#wizard3-2" data-rel="dialog" data-transition="slide">다음</a>
+		</div>
+	</div>
+
+	<div data-role="page" id="wizard3-2">
+		<div data-role="header">
+			<h1>LOL OP2</h1>
+		</div>
+		<div data-role="content">
+			<div class="ui-bar ui-bar-e">effect-여러 효과음</div><br/>
+			<audio controls width="100%" preload="metadata">
+				<source src="effect.mp3" type="audio/mp3">
+			</audio>			
+			<img src="timo.jpg" alt="" width="100%">
+		</div>
+		<div data-role="footer">
+			<a href="#wizard3-1"  data-direction="reverse">이전</a>
+			<a href="#home">처음</a>
+		</div>
+	</div>
+
+	<div data-role="page" id="gallery"  data-theme="b">
+		<div data-role="header" data-position="fixed"  data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>자료 사진</h1>
+		</div>
+		<div data-role="content">
+			<ul class="slider">
+
+				<li><a href="https://www.op.gg/"><img src="1-1.jpg" alt="" title="design" width="100%"></a></li>		
+				<li><a href="https://www.op.gg/"><img src="1-2.jpg" alt="" title="design" width="100%"></a></li>		
+				<li><a href="https://www.op.gg/"><img src="1-3.jpg" alt="" title="design" width="100%"></a></li>
+				<li><a href="https://www.op.gg/"><img src="1-4.jpg" alt="" title="design" width="100%"></a></li>
+
+				<li><a href="https://www.opgg.team/"><img src="2-1.png" alt="" title="info" width="100%"></a></li>
+				<li><a href="https://www.opgg.team/"><img src="2-2.jpg" alt="" title="info" width="100%"></a></li>
+				<li><a href="https://www.opgg.team/"><img src="2-3.png" alt="" title="info" width="100%"></a></li>
+				<li><a href="https://www.opgg.team/"><img src="2-4.png" alt="" title="info" width="100%"></a></li>
+				<li><a href="https://www.opgg.team/"><img src="2-5.png" alt="" title="info" width="100%"></a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>전적 검색 사이트</h1>
+		</div>		
+	</div>
+</div>	
+
+</body>
+</html>
